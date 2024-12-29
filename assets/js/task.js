@@ -52,15 +52,37 @@ contactForm.addEventListener('submit', sendEmail);
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to("", {
-  x: 400,  // Move the box 400px to the right
-  opacity: 1,  // Fade in the box
-  duration: 1,  // Duration of the animation (optional)
-  scrollTrigger: {
-    trigger: ".scroll-container",  // Trigger container
-    start: "top bottom",  // Start when the top of the container reaches the bottom of the viewport
-    end: "bottom top",  // End when the bottom of the container hits the top
-    scrub: true,  // Smooth animation as you scroll
-    markers: true,  // Optional: display start and end points
-  }
+gsap.from(".item3", {
+  x: -100, // Move from 100px below
+  opacity: 0,
+  stagger: 0.8, // Delay between items
+
 });
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".item", {
+      y: 100, // Move from 100px below
+      opacity: 0,
+      stagger: 0.6, // Delay between items
+      scrollTrigger: {
+        trigger: ".container",
+        start: "top 80%", // Trigger when container enters 80% of viewport
+      },
+    });
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".item2", {
+      x: 300, // Move from 100px below
+      opacity: 0,
+      stagger: 1.5, // Delay between items
+      scrollTrigger: {
+        trigger: ".container",
+        start: "top 80%", // Trigger when container enters 80% of viewport
+      },
+    });
+
+    
+  
